@@ -19,7 +19,7 @@ declare class Transport {
 	sendMailWithTransport(emailMessage: MailComposer, callback?: (err: Error) => any): any;
 	useDKIM(dkim: DKIMOptions): void;
 	close(callback?: (err: Error) => any): any;
-	sendMail(message: MailComposer, callback?: (err: Error) => any): any;
+	sendMail(message: MailComposer, callback?: (err: Error,info:{response:string}) => any): any;
 	send_mail(message:MailComposer, callback?: (err: Error) => any): any;
 }
 
@@ -98,10 +98,13 @@ interface NodemailerSMTPTransportOptions {
 
 
 interface Nodemailer {
-	createTransport(type: string): Transport;
-	createTransport(type: string, options: NodemailerTransportOptions): Transport;
-	createTransport(type: string, options: NodemailerSMTPTransportOptions): Transport;
-	createTransport(type: string, path: string): Transport;
+    /**
+     * "nodemailer": "^1.3.2"
+     */
+    createTransport(): Transport;
+    createTransport(options: NodemailerTransportOptions): Transport;
+    createTransport(options: NodemailerSMTPTransportOptions): Transport;
+    createTransport(path: string): Transport;
 	createXOAuthGenerator(options: XOAuthGeneratorOptions): XOAuthGenerator;
 }
 
