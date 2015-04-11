@@ -33,7 +33,12 @@ interface NodeMailerAttachment {
 
 interface MailComposer {	
 	from: string; // sender info
+    sender?: string; // An e-mail address that will appear on the Sender: field
 	to: string;   // Comma separated list of recipients
+    cc?: string; // Comma separated list or an array of recipients e-mail addresses that will appear on the Cc: field
+    bcc?: string; // Comma separated list or an array of recipients e-mail addresses that will appear on the Bcc: field
+    replyTo?: string; // An e-mail address that will appear on the Reply-To: field
+    inReplyTo?: string; // The message-id this message is replying
 	subject: string; // Subject of the message
 	headers?: {};
 	text?: string;  // plaintext body
