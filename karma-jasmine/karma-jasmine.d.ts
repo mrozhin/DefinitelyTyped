@@ -6,4 +6,4 @@
 /// <reference path="../jasmine/jasmine.d.ts" />
 
 declare function fdescribe(description: string, specDefinitions: () => void): void;
-declare function fit(expectation: string, assertion: () => void): void;
+declare function fit(expectation: string, assertion: (done:()=>void) => void): void;
