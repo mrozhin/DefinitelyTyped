@@ -140,6 +140,7 @@ declare module "mongoose" {
       Mixed: any;
     };
     constructor(schema?: Object, options?: Object);
+    static ObjectId: {new():Types.ObjectId};
 
     add(obj: Object, prefix?: string): void;
     eachPath(fn: (path: string, type: any) => void): Schema;
