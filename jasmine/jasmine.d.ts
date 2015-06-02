@@ -144,6 +144,7 @@ declare module jasmine {
         setInterval: any;
         clearInterval: void;
         updateInterval: number;
+        defaultTimeoutInterval: number;
 
         currentSpec: Spec;
 
