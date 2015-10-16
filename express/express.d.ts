@@ -11,7 +11,7 @@
  =============================================== */
 
 /// <reference path="../node/node.d.ts" />
-/// <reference path="../serve-static/serve-static.d.ts" />
+
 
 declare module Express {
 
@@ -25,7 +25,7 @@ declare module Express {
 
 declare module "express" {
     import * as http from "http";
-    import * as serveStatic from "serve-static";
+    //import * as serveStatic from "serve-static";
 
     function e(): e.Express;
 
@@ -1077,7 +1077,7 @@ declare module "express" {
             response: Response;
         }
 
-        var static: typeof serveStatic;
+        var static: any;
     }
 
     export = e;
